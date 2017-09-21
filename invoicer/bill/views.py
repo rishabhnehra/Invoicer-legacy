@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.views.generic import View
 from .models import Bill, Product
 from .forms import BillForm, ProductForm
 
-
+@login_required
 def dashboard(request):		#Shows the list of all the stored bills
 	bills = Bill.objects.all().order_by('-created')[:10]
 	context = {
