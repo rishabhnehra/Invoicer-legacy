@@ -18,12 +18,12 @@
 			{% csrf_token %}
 
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--2-offset-desktop mdl-cell--5-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="id_{{ add_product.description.name }}" name="{{ add_product.description.name }}" value="{% if add_product.description.value != 'N/A' %}{{ add_product.description.value }}{% endif %}">
+				<input class="mdl-textfield__input" type="text" id="id_{{ add_product.description.name }}" name="{{ add_product.description.name }}" value="{% if add_product.description.value != None %}{{ add_product.description.value }}{% endif %}">
 				<label class="mdl-textfield__label" >Description</label>
 			</div>
 
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--1-offset-tablet mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="id_{{ add_product.item_type.name }}" name="{{ add_product.item_type.name }}" value="{% if add_product.item_type.value != 'N/A' %}{{ add_product.item_type.value }}{% endif %}">
+				<input class="mdl-textfield__input" type="text" id="id_{{ add_product.item_type.name }}" name="{{ add_product.item_type.name }}" value="{% if add_product.item_type.value != None %}{{ add_product.item_type.value }}{% endif %}">
 				<label class="mdl-textfield__label" >Item Type</label>
 			</div>
 

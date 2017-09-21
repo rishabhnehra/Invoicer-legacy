@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone 
 
 class Bill(models.Model):
 	invoice = models.CharField(max_length=100)
@@ -7,7 +8,7 @@ class Bill(models.Model):
 	buyer_gstin = models.CharField(max_length=15)
 	buyer_mobile = models.CharField(max_length=10)
 	date_of_issue = models.DateField()
-	total = models.DecimalField(max_digits = 10, decimal_places = 2)
+	total = models.FloatField(default=0)
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
@@ -21,16 +22,16 @@ class Product(models.Model):
 	item_type = models.CharField(max_length=100)
 	hsn = models.IntegerField()
 	quantity = models.IntegerField()
-	rate = models.DecimalField(max_digits = 10, decimal_places = 2)
-	discount = models.DecimalField(max_digits = 10, decimal_places = 2)
-	taxable_value = models.DecimalField(max_digits = 10, decimal_places = 2)
-	cgst_rate = models.DecimalField(max_digits = 10, decimal_places = 2)
-	cgst_amount = models.DecimalField(max_digits = 10, decimal_places = 2)
-	sgst_rate = models.DecimalField(max_digits = 10, decimal_places = 2)
-	sgst_amount = models.DecimalField(max_digits = 10, decimal_places = 2)
-	igst_rate = models.DecimalField(max_digits = 10, decimal_places = 2)
-	igst_amount = models.DecimalField(max_digits = 10, decimal_places = 2)
-	amount = models.DecimalField(max_digits = 10, decimal_places = 2)
+	rate = models.FloatField()
+	discount = models.FloatField()
+	taxable_value = models.FloatField()
+	cgst_rate = models.IntegerField()
+	cgst_amount = models.FloatField()
+	sgst_rate = models.IntegerField()
+	sgst_amount = models.FloatField()
+	igst_rate = models.IntegerField()
+	igst_amount = models.FloatField()
+	amount = models.FloatField()
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 

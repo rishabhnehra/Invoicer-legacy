@@ -1,5 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }} | Home {% endblock %}
 
 {% block content %}
-<h1>dsdasddsds</h1>
+	<h3>Welcome to the Invoicer</h3>
+	<a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect1" href="{% url 'bill:dashboard' %}">Dashboard</a>
 {% endblock %}

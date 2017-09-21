@@ -27,6 +27,7 @@ def new_bill(request):
 	bill = BillForm(request.POST or None)
 	if bill.is_valid():
 			bill = bill.save()
+			id = bill.id
 			return redirect('bill:products', bill.id)
 	context = {
 		'bill': bill

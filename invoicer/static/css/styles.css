@@ -1,0 +1,54 @@
+/*****************
+******************
+****Reset Styles*/
+html{
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+@media (min-width: 1025px){
+	#fab-add{
+		display: none;
+	}
+}
+
+/* To make FAB stick to the bottom right of the screen */
+#fab-add{
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+}
+
+/* To align the icon and text in the drawer */
+.mdl-navigation__link .material-icons {
+    vertical-align: middle;
+    margin-right: 22px;
+    margin-left: 10px;
+}
+
+/* To make the data in the table to wrap. Default was nowrap */
+.mdl-data-table {
+    white-space: normal; 
+}
+
+
+/* Makes the table look good on 4 inch screen size like iPhone 5 */
+.mdl-data-table td, .mdl-data-table th {
+    padding: 12px 15px 12px 2px
+}
+
+@media (max-width: 479px){
+	.mdl-cell {
+	    margin: 6px;
+	}
+}
+
+@media (min-width: 840px){
+	.mdl-cell {
+    	margin: 6px;
+	}
+}
+
