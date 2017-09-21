@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.views.generic import View
-from twilio.rest import Client
 from .models import Bill, Product
 from .forms import BillForm, ProductForm
 
@@ -63,29 +62,6 @@ def products(request, id):
 		'products': products,
 		'add_product': add_product	}
 	return render(request, 'bill/new_product.html', context)
-
-
-def send_sms(request, id):
-	print("YO")
-	bill = get_object_or_404(Bill, id = id)
-	to = "+91{0}".format(bill.buyer_mobile)
-	message = "Your invoice no. is {}. And the amount payable is ₹{}".format(bill.invoice, bill.total)
-	account_sid = os.environ['TWILIO_ACCOUNT_SID']
-	auth_token = os.environ['TWILIO_AUTH_TOKEN']
-	client = Client(account_sid, auth_token)
-	print("Object Created")
-	
-	try:
-		client.messages.create(
-		    to = to,
-		    from_ = os.environ['TWILIO_NUMBER'],
-		    body = message
-	    )
-	except Exception as e:
-		print(e)
-
-	print("Passed the send_sms")
-	return redirect('bill:summary', id)
 
 
 def history(request):

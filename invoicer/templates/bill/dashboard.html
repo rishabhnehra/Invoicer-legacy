@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ block.super }} | Dashboard{% endblock %}
+
+{% block content %}
+	<div class="mdl-grid">
+		{% if bills %}
+			<h3 class="mdl-cell mdl-cell--12-col">Recent bills</h3>
+			<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--1-offset-desktop mdl-cell--10-col-desktop">
+				<thead>
+					<tr>
+						<th class="mdl-data-table__cell">#</th>
+						<th class="mdl-data-table__cell--non-numeric">Name</th>
+						<th class="mdl-data-table__cell--non-numeric">Date</th>
+						<th class="mdl-data-table__cell">Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for bill in bills %}
+					<tr>
+						<td class="mdl-data-table__cell"><a href="{% url 'bill:summary' bill.id %}">{{ bill.id }}</td>
+						<td class="mdl-data-table__cell--non-numeric">{{ bill.buyer_name }}</td>
+						<td class="mdl-data-table__cell--non-numeric">{{ bill.date_of_issue }}</td>
+						<td class="mdl-data-table__cell">{{ bill.total }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<h3>You haven't entered any bill</h3>
+		{% endif %}
+	</div>
+	<a id="fab-add" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" href="{% url 'bill:new' %}"><i class="material-icons">add</i></a>
+{% endblock %}

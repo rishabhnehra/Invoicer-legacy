@@ -1,0 +1,42 @@
+<h1>You are in Bill detail app</h1>
+
+{% if products %}
+<table border="1">
+	<tr>
+		<th>Description</th>
+		<th>Item Type</th>
+		<th>HSN</th>
+		<th>Quantity</th>
+		<th>Rate</th>
+		<th>Discount</th>
+		<th>Taxable_value</th>
+		<th>CGST Rate</th>
+		<th>CGST Amount</th>
+		<th>SGST Rate</th>
+		<th>SGST Amount</th>
+		<th>IGST Rate</th>
+		<th>IGST Amount</th>
+		<th>Amount</th>
+	</tr>
+	{% for product in products %}
+	<tr>
+		<td>{{ product.description }}</td>
+		<td>{{ product.item_type }}</td>
+		<td>{{ product.hsn }}</td>
+		<td>{{ product.quantity }}</td>
+		<td>{{ product.rate }}</td>
+		<td>{{ product.discount }}</td>
+		<td>{{ product.taxable_value }}</td>
+		<td>{{ product.cgst_rate }}</td>
+		<td>{{ product.cgst_amount }}</td>
+		<td>{{ product.sgst_rate }}</td>
+		<td>{{ product.sgst_amount }}</td>
+		<td>{{ product.igst_rate }}</td>
+		<td>{{ product.igst_amount }}</td>
+		<td>{{ product.amount }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<h2>You haven't entered any Product</h2>
+{% endif %}

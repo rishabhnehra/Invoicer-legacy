@@ -1,0 +1,271 @@
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Invoice | Bill #{{ bill.id }}</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style>
+	*{
+		box-sizing: border-box;
+		font-family: 'Roboto', Helvetica, sans-serif;
+	}
+	.capitalize{
+		text-transform: uppercase;
+	}
+/*	@media screen{
+		.cont{
+			margin-top: 10px;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+	}*/
+	@media print{
+	   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+	        float: left;
+	   }
+	   .col-sm-12 {
+	        width: 100%;
+	   }
+	   .col-sm-11 {
+	        width: 91.66666667%;
+	   }
+	   .col-sm-10 {
+	        width: 83.33333333%;
+	   }
+	   .col-sm-9 {
+	        width: 75%;
+	   }
+	   .col-sm-8 {
+	        width: 66.66666667%;
+	   }
+	   .col-sm-7 {
+	        width: 58.33333333%;
+	   }
+	   .col-sm-6 {
+	        width: 50%;
+	   }
+	   .col-sm-5 {
+	        width: 41.66666667%;
+	   }
+	   .col-sm-4 {
+	        width: 33.33333333%;
+	   }
+	   .col-sm-3 {
+	        width: 25%;
+	   }
+	   .col-sm-2 {
+	        width: 16.66666667%;
+	   }
+	   .col-sm-1 {
+	        width: 8.33333333%;
+	   }
+	   .col-sm-offset-5{
+	   		width: 41.66666667%;
+	   }
+	}
+
+	.cont{
+		margin: 0px;
+	}
+
+	.text-right{
+		text-align: right;
+	}
+
+	.qr{
+		width: 140px;
+		height: 140px;
+	}
+
+	.bhim{
+		margin-top: -100px;
+		width: 70px;
+		height: 17.79px;
+	}
+
+	.text-center{
+		text-align: center;
+	}
+
+	.margin-top-5{
+		margin-top: 5px;
+	}
+
+	.signature-space{
+		height: 40px;
+	}
+
+	.material-icons.margin-5 {
+		margin-right: 5px;
+		margin-top: -9px;
+	}
+
+	.material-icons.md-14 { font-size: 14px; }
+	.material-icons.md-18 { font-size: 18px; }
+	.material-icons.md-24 { font-size: 24px; }
+	.material-icons.md-36 { font-size: 36px; }
+	.material-icons.md-48 { font-size: 48px; }
+
+	.main{
+		padding: 0;
+		margin: 0;
+/*		border-bottom-style: #000;
+		color: #FFF;
+		background-color: #1A237E;
+		background-size: 2px 2px;*/
+/*		background: linear-gradient(
+		    45deg,
+		    #fff,
+		    #fff 50%,
+		    #000 50%,
+		    #000
+		);
+		background-size: 2px 2px;*/
+		border: solid;
+	}
+
+	.bhim{
+		margin: 5px;
+	}
+
+	.bhim-qr{
+		width: 100px;
+		height: 100px;
+	}
+
+	.large-width{
+		width: 30%;
+	}
+	@media print{
+		.display {
+			display: none;
+		}
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="row cont main">
+			<div class="col-sm-6"><h4><strong class="capitalize">Tax Invoice</strong></h4></div>
+			<div class="col-sm-2"><h4>{{ bill.invoice }}</h4></div>
+			<div class="col-sm-2"><h4>{{ bill.date_of_issue|date:"d/m/Y" }}</h4></div>
+			<div class="col-sm-2"><h4>₹ {{ bill.total }}</h4></div>	
+		</div>
+	</header>
+
+	<div class="row margin-top-5">
+
+		<div class="col-sm-7">
+			<div class="row">
+				<div class="col-sm-12"><h3 class="capitalize margin-top-5"><strong>Rishabh Consultants</strong></h3></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12"><p><strong>GSTIN:</strong> ABNPN1124A</p></div>
+			</div>
+		</div>
+
+		<div class="col-sm-5">
+			<p><i class="material-icons md-14">business</i> 304 Shyam Residency, 9/2 Patel Colony, Ashapura Cross Road, Jamnagar, Gujarat - 361008</p>
+			<p><i class="material-icons md-14">phone</i>  +91 93777 73233</p>
+			<p><i class="material-icons md-14">email</i>  anilhnehra@gmail.com</p>
+		</div>
+	</div>
+	<hr>
+	<main>
+
+		<div class="row">
+
+			<div class="col-sm-8">
+				<p><strong>{{ bill.buyer_name }}</strong></p>
+				<p>{{ bill.buyer_address }}</p>
+				<p>GSTIN: {{ bill.buyer_gstin }}</p>
+				<p><i class="material-icons md-14">phone</i>  +91 {{ bill.buyer_mobile }}</p>
+			</div>
+
+			<div class="col-sm-4">
+				<p><strong class="capitalize">Invoice no.:</strong> {{ bill.invoice }}</p>
+				<p><strong class="capitalize">Invoice Date:</strong> {{ bill.date_of_issue|date:"d/m/Y" }}</p>
+				<p><strong class="capitalize">Reference:</strong> Verbal</p>
+				<p><strong class="capitalize">Reference Date:</strong> {{ bill.date_of_issue|date:"d/m/Y" }}
+					<p><strong class="capitalize">Subject to:</strong> Jamnagar jurisdiction</p>
+				<!-- <div class="row">
+					<div class="col-sm-6"><p><strong class="capitalize">Invoice no.:</strong> {{ bill.id }}</p></div>
+					<div class="col-sm-6"><p><strong class="capitalize">Invoice Date:</strong> {{ bill.date_of_issue }}</p></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6"><p><strong class="capitalize">Reference:</strong> Verbal</p></div>
+					<div class="col-sm-6"><p><strong class="capitalize">Reference Date:</strong> {{ bill.date_of_issue }}</p></div>
+				</div> -->
+			</div>
+
+		</div>
+
+		<div>
+			<table class="table table-condensed table-responsive table-bordered">
+				<thead>
+					<tr>
+						<th class="capitalize">#</th>
+						<th class="capitalize large-width">Item</th>
+						<th class="capitalize">HSN</th>
+						<th class="capitalize">Qty</th>
+						<th class="capitalize">Rate</th>
+						<th class="capitalize">Disc.</th>
+						<th class="capitalize">Tax. Val.</th>
+						<th class="capitalize">CGST(%)</th>
+						<th class="capitalize">CGST(₹)</th>
+						<th class="capitalize">SGST(%)</th>
+						<th class="capitalize">SGST(₹)</th>
+						<th class="capitalize">IGST(%)</th>
+						<th class="capitalize">IGST(₹)</th>
+						<th class="capitalize">Amt.</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for product in products %}
+					<tr>
+						<td>{{ forloop.counter }}</td>
+						<td>{{ product.description }}</td>
+						<td>{{ product.hsn }}</td>
+						<td>{{ product.quantity }}</td>
+						<td>{{ product.rate }}</td>
+						<td>{{ product.discount }}</td>
+						<td>{{ product.taxable_value }}</td>
+						<td>{{ product.cgst_rate }}</td>
+						<td>{{ product.cgst_amount }}</td>
+						<td>{{ product.sgst_rate }}</td>
+						<td>{{ product.sgst_amount }}</td>
+						<td>{{ product.igst_rate }}</td>
+						<td>{{ product.igst_amunt }}</td>
+						<td>{{ product.amount }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+		<p class="text-right capitalize"><strong>Grand Total:</strong> ₹ {{ bill.total }}</p>
+
+	</main>
+	<hr>
+	<div class="row">
+		<div class="col-sm-6">
+			<img class="bhim" src="{% static 'img/bhim.jpeg' %}">
+			<img class="bhim-qr" src="{% static 'img/pnbupi1.jpeg' %}">
+		</div>
+		<div class="col-sm-6 text-right">
+			<div><p>Yours Sincerely</p></div>
+			<div class="signature-space"></div>
+			<div><p>for Rishabh Consultants</p></div>
+		</div>
+	</div>
+	<hr>
+
+	<a class="display btn btn-primary" href="{% url 'bill:dashboard'%}">Dashboard</a>
+
+</body>
+</html>
