@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 urlpatterns = [
-	url(r'^accounts/', include('allauth.urls')),
+	url(r'^accounts/', include('django.contrib.auth.urls')),
 	url(r'^bill/', include('bill.urls', namespace="bill")),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -1,9 +1,26 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.views.generic import View
 from .models import Bill, Product
-from .forms import BillForm, ProductForm
+from .forms import BillForm, ProductForm, ProfileForm
+
+def signup(request):
+	form = ProfileForm(request.POST or None)
+	if form.is_valid():
+		user = form.save()
+		user.refresh_from_db()
+		user.profile.company = form.cleaned_data.get('company')
+		user.profile.mobile = form.cleaned_data.get('mobile')
+		user.profile.gstin = form.cleaned_data.get('gstin')
+		user.profile.place_of_supply = form.cleaned_data.get('place_of_supply')
+		user.save()
+		raw_password = form.cleaned_data.get('password1')
+		user = authenticate(username = user.username, password = raw_password)
+		login(request, user)
+		return redirect('bill:dashboard')
+	return render(request, 'registration/signup.html', { 'form': form })
 
 @login_required
 def dashboard(request):		#Shows the list of all the stored bills
