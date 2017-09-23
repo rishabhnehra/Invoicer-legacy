@@ -216,12 +216,9 @@
 						<th class="capitalize">Rate</th>
 						<th class="capitalize">Disc.</th>
 						<th class="capitalize">Tax. Val.</th>
-						<th class="capitalize">CGST(%)</th>
-						<th class="capitalize">CGST(₹)</th>
-						<th class="capitalize">SGST(%)</th>
-						<th class="capitalize">SGST(₹)</th>
-						<th class="capitalize">IGST(%)</th>
-						<th class="capitalize">IGST(₹)</th>
+						<th class="capitalize text-center" colspan="2">CGST</th>
+						<th class="capitalize text-center" colspan="2">SGST</th>
+						<th class="capitalize text-center" colspan="2">IGST</th>
 						<th class="capitalize">Amt.</th>
 					</tr>
 				</thead>
@@ -235,12 +232,12 @@
 						<td>{{ product.rate }}</td>
 						<td>{{ product.discount }}</td>
 						<td>{{ product.taxable_value }}</td>
-						<td>{{ product.cgst_rate }}</td>
-						<td>{{ product.cgst_amount }}</td>
-						<td>{{ product.sgst_rate }}</td>
-						<td>{{ product.sgst_amount }}</td>
-						<td>{{ product.igst_rate }}</td>
-						<td>{{ product.igst_amunt }}</td>
+						<td>{{ product.cgst_rate }}%</td>
+						<td>₹{{ product.cgst_amount }}</td>
+						<td>{{ product.sgst_rate }}%</td>
+						<td>₹{{ product.sgst_amount }}</td>
+						<td>{{ product.igst_rate }}%</td>
+						<td>₹{{ product.igst_amunt }}</td>
 						<td>{{ product.amount }}</td>
 					</tr>
 					{% endfor %}
@@ -254,8 +251,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-sm-6">
-			<img class="bhim" src="{% static 'img/bhim.jpeg' %}">
-			<img class="bhim-qr" src="{% static 'img/pnbupi1.jpeg' %}">
+
 		</div>
 		<div class="col-sm-6 text-right">
 			<div><p>Yours Sincerely</p></div>

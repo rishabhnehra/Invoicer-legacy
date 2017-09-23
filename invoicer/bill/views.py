@@ -53,7 +53,7 @@ def products(request, id):
 		else:
 			add_product.amount = add_product.taxable_value + add_product.cgst_amount + add_product.sgst_amount
 		bill.total = bill.total + add_product.amount
-		bill.invoice = "RC{0}9{1}".format(bill.date_of_issue.strftime("%y%m%d"), bill.id)
+		bill.invoice = "IN{0}Z{1}".format(bill.date_of_issue.strftime("%y%m%d"), bill.id)
 		add_product.bill = bill
 		add_product.save()
 		bill.save()
