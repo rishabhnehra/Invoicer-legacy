@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.views.generic import View
-from .models import Bill, Product
+from .models import Bill, Product, Profile
 from .forms import BillForm, ProductForm, ProfileForm
 
 def signup(request):
@@ -24,13 +24,10 @@ def signup(request):
 
 @login_required
 def dashboard(request):		#Shows the list of all the stored bills
-	bills = Bill.objects.all().order_by('-created')[:10]
-	context = {
-		'bills': bills
-	}
-	return render(request, 'bill/dashboard.html', context)
+	bills = Bill.objects.filter(user = request.user).order_by('-created')[:10]
+	return render(request, 'bill/dashboard.html', { 'bills': bills })
 
-
+@login_required
 def detail(request, id):	#A detail view of that Bill id
 	bill = get_object_or_404(Bill, id=id)
 	products = bill.product_set.all()
@@ -40,19 +37,17 @@ def detail(request, id):	#A detail view of that Bill id
 	}
 	return render(request, 'bill/summary.html', context)
 
-
+@login_required
 def new_bill(request):
 	bill = BillForm(request.POST or None)
 	if bill.is_valid():
-			bill = bill.save()
-			id = bill.id
-			return redirect('bill:products', bill.id)
-	context = {
-		'bill': bill
-	}
-	return render(request, 'bill/new_bill.html', context)
+			new_bill = bill.save(commit = False)
+			new_bill.user = request.user
+			new_bill.save()
+			return redirect('bill:products', new_bill.id)
+	return render(request, 'bill/new_bill.html', { 'bill': bill })
 
-
+@login_required
 def products(request, id):
 	bill = get_object_or_404(Bill, id=id)
 	products = bill.product_set.all()
@@ -82,7 +77,7 @@ def products(request, id):
 		'add_product': add_product	}
 	return render(request, 'bill/new_product.html', context)
 
-
+@login_required
 def history(request):
-	bills = Bill.objects.all().order_by('-created')
+	bills = Bill.objects.filter(user = request.user).order_by('-created')
 	return render(request, 'bill/history.html', { 'bills': bills })

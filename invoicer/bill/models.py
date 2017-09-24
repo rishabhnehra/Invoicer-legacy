@@ -61,6 +61,7 @@ def update_user_profile(sender, instance, created, **kwargs):
 
 
 class Bill(models.Model):
+	user = models.ForeignKey(User, on_delete = models.CASCADE)
 	invoice = models.CharField(max_length = 100)
 	buyer_name = models.CharField(max_length = 50)
 	buyer_address = models.CharField(max_length = 150)

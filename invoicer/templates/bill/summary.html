@@ -154,7 +154,7 @@
 			<div class="col-sm-6"><h4><strong class="capitalize">Tax Invoice</strong></h4></div>
 			<div class="col-sm-2"><h4>{{ bill.invoice }}</h4></div>
 			<div class="col-sm-2"><h4>{{ bill.date_of_issue|date:"d/m/Y" }}</h4></div>
-			<div class="col-sm-2"><h4>₹ {{ bill.total }}</h4></div>	
+			<div class="col-sm-2"><h4>₹ {{ bill.total|floatformat:2 }}</h4></div>	
 		</div>
 	</header>
 
@@ -231,21 +231,21 @@
 						<td>{{ product.quantity }}</td>
 						<td>{{ product.rate }}</td>
 						<td>{{ product.discount }}</td>
-						<td>{{ product.taxable_value }}</td>
+						<td>{{ product.taxable_value|floatformat:2 }}</td>
 						<td>{{ product.cgst_rate }}%</td>
-						<td>₹{{ product.cgst_amount }}</td>
+						<td>₹{{ product.cgst_amount|floatformat:2 }}</td>
 						<td>{{ product.sgst_rate }}%</td>
-						<td>₹{{ product.sgst_amount }}</td>
+						<td>₹{{ product.sgst_amount|floatformat:2 }}</td>
 						<td>{{ product.igst_rate }}%</td>
-						<td>₹{{ product.igst_amunt }}</td>
-						<td>{{ product.amount }}</td>
+						<td>₹{{ product.igst_amount|floatformat:2 }}</td>
+						<td>{{ product.amount|floatformat:2 }}</td>
 					</tr>
 					{% endfor %}
 				</tbody>
 			</table>
 		</div>
 
-		<p class="text-right capitalize"><strong>Grand Total:</strong> ₹ {{ bill.total }}</p>
+		<p class="text-right capitalize"><strong>Grand Total:</strong> ₹ {{ bill.total|floatformat:2 }}</p>
 
 	</main>
 	<hr>
