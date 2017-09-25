@@ -4,8 +4,14 @@
 
 {% block content %}
 
+<div class="mdl-grid">
+  <h3 class="mdl-cell mdl-cell--12-col text-center">Login</h3>
+</div>
+
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<div class="mdl-grid">
+  <p class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop" style="color: red">Your username and password didn't match. Please try again.</p>
+</div>
 {% endif %}
 
 

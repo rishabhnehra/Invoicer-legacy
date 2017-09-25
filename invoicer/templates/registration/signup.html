@@ -4,14 +4,21 @@
   <div class="mdl-grid">
     <h3 class="mdl-cell mdl-cell--12-col text-center">Register</h3>
   </div>
-  <form class="mdl-grid" method="post">
 
+  <div class="mdl-grid">
+    <p class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop" style="color: red">Please enter the following details in the form</p>
+    <ul class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop">
     {% for error in form.errors %}
-      <p style="color: red">{{ error }} </p>
+      <li style="color: red">{{ error }} </li>
     {% endfor %}
+    </ul>
+  </div>
+
+
+  <form class="mdl-grid" method="post">
     {% csrf_token %}
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" name="{{ form.username.name }}" id="id_{{ form.username.name }}" maxlength="254">
+      <input class="mdl-textfield__input" type="text" name="{{ form.username.name }}" id="id_{{ form.username.name }}" maxlength="254" value="{% if form.username.value != None %}{{ form.username.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.username.name }}">Username</label>
     </div>
 
@@ -26,44 +33,43 @@
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" name="{{ form.first_name.name }}" id="id_{{ form.first_name.name }}" maxlength="30">
+      <input class="mdl-textfield__input" type="text" name="{{ form.first_name.name }}" id="id_{{ form.first_name.name }}" maxlength="30" value="{% if form.first_name.value != None %}{{ form.first_name.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.first_name.name }}">First Name</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" name="{{ form.last_name.name }}" id="id_{{ form.last_name.name }}" maxlength="30">
+      <input class="mdl-textfield__input" type="text" name="{{ form.last_name.name }}" id="id_{{ form.last_name.name }}" maxlength="30" value="{% if form.last_name.value != None %}{{ form.last_name.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.last_name.name }}">Last Name</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="email" name="{{ form.email.name }}" id="id_{{ form.email.name }}" maxlength="254">
+      <input class="mdl-textfield__input" type="email" name="{{ form.email.name }}" id="id_{{ form.email.name }}" maxlength="254" value="{% if form.email.value != None %}{{ form.email.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.email.name }}">Email</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" name="{{ form.company.name }}" id="id_{{ form.company.name }}" maxlength ="50">
+      <input class="mdl-textfield__input" type="text" name="{{ form.company.name }}" id="id_{{ form.company.name }}" maxlength ="50" value="{% if form.company.value != None %}{{ form.company.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.company.name }}">Company</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <textarea class="mdl-textfield__input" type="text" id="id_{{ form.address.name }}" name="{{ form.address.name }}" rows="3""></textarea>
+      <textarea class="mdl-textfield__input" type="text" id="id_{{ form.address.name }}" name="{{ form.address.name }}" rows="3"">{% if form.address.value != None %}{{ form.address.value }}{% endif %}</textarea>
      <label class="mdl-textfield__label" for="id_{{ form.address.name }}">Address</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="nume" name="{{ form.mobile.name }}" id="id_{{ form.mobile.name }}" maxlength="10">
+      <input class="mdl-textfield__input" type="nume" name="{{ form.mobile.name }}" id="id_{{ form.mobile.name }}" maxlength="10" value="{% if form.mobile.value != None %}{{ form.mobile.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.mobile.name }}">Mobile</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <input class="mdl-textfield__input" type="text" name="{{ form.gstin.name }}" id="id_{{ form.gstin.name }}" maxlength="15">
+      <input class="mdl-textfield__input" type="text" name="{{ form.gstin.name }}" id="id_{{ form.gstin.name }}" maxlength="15" value="{% if form.gstin.value != None %}{{ form.gstin.value }}{% endif %}">
       <label class="mdl-textfield__label" for="id_{{ form.gstin.name }}">GSTIN</label>
     </div>
 
-    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <label for="id_{{ form.place_of_supply.name }}">Place Of Supply</label>
-      <select id="id_{{ form.place_of_supply.name }}" name="{{ form.place_of_supply.name }}">
-        
+<!--     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+ -->      <select class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop" id="id_{{ form.place_of_supply.name }}" name="{{ form.place_of_supply.name }}">
+        <option disabled selected>Place Of Supply</option>
         <option value="1">Jammu &amp; Kashmir</option>
         <option value="2">Himachal Pradesh</option>
         <option value="3">Punjab</option>
@@ -102,7 +108,7 @@
         <option value="37">Andhra Pradesh</option>
         <option value="97">Other Territory</option>
       </select>
-    </div>
+    <!-- </div> -->
     
     <button class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Sign up</button>
   </form>
