@@ -1,0 +1,1 @@
+web: cd invoicer && python manage.py migrate && gunicorn invoicer.wsgi --log-file -
