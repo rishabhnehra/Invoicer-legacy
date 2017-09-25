@@ -19,7 +19,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 urlpatterns = [
-	url(r'^accounts/', include('django.contrib.auth.urls')),
+	url(r'^$', TemplateView.as_view(template_name = "index.html"), name = "home"),
+	url(r'^accounts/', include('django.contrib.auth.urls', namespace="accounts")),
 	url(r'^bill/', include('bill.urls', namespace="bill")),
     url(r'^admin/', include(admin.site.urls)),
 ]

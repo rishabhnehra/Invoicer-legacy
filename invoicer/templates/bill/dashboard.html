@@ -21,7 +21,7 @@
 						<td class="mdl-data-table__cell"><a href="{% url 'bill:summary' bill.id %}">{{ bill.id }}</td>
 						<td class="mdl-data-table__cell--non-numeric">{{ bill.buyer_name }}</td>
 						<td class="mdl-data-table__cell--non-numeric">{{ bill.date_of_issue }}</td>
-						<td class="mdl-data-table__cell">{{ bill.total }}</td>
+						<td class="mdl-data-table__cell">{{ bill.total|floatformat:2 }}</td>
 					</tr>
 					{% endfor %}
 				</tbody>

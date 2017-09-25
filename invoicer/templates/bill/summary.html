@@ -162,17 +162,17 @@
 
 		<div class="col-sm-7">
 			<div class="row">
-				<div class="col-sm-12"><h3 class="capitalize margin-top-5"><strong>Rishabh Consultants</strong></h3></div>
+				<div class="col-sm-12"><h3 class="capitalize margin-top-5"><strong>{{ user.profile.company }}</strong></h3></div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12"><p><strong>GSTIN:</strong> ABNPN1124A</p></div>
+				<div class="col-sm-12"><p><strong>GSTIN:</strong> {{ user.profile.gstin }}</p></div>
 			</div>
 		</div>
 
 		<div class="col-sm-5">
 			<p><i class="material-icons md-14">business</i> 304 Shyam Residency, 9/2 Patel Colony, Ashapura Cross Road, Jamnagar, Gujarat - 361008</p>
-			<p><i class="material-icons md-14">phone</i>  +91 93777 73233</p>
-			<p><i class="material-icons md-14">email</i>  anilhnehra@gmail.com</p>
+			<p><i class="material-icons md-14">phone</i>  +91 {{ user.profile.mobile }}</p>
+			<p><i class="material-icons md-14">email</i>  {{ user.email }}</p>
 		</div>
 	</div>
 	<hr>
@@ -256,7 +256,7 @@
 		<div class="col-sm-6 text-right">
 			<div><p>Yours Sincerely</p></div>
 			<div class="signature-space"></div>
-			<div><p>for Rishabh Consultants</p></div>
+			<div><p>for {{ user.profile.company }}</p></div>
 		</div>
 	</div>
 	<hr>

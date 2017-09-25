@@ -9,12 +9,6 @@ html{
 	box-sizing: inherit;
 }
 
-@media (min-width: 1025px){
-	#fab-add{
-		display: none;
-	}
-}
-
 /* To make FAB stick to the bottom right of the screen */
 #fab-add{
 	position: fixed;

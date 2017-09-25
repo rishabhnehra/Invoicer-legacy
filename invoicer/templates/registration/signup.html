@@ -1,10 +1,108 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
+  <div class="mdl-grid">
+    <h3 class="text-center">Register</h3>
+  </div>
+  <form class="mdl-grid" method="post">
+    {% for error in form.errors %}
+          <p style="color: red">{{ error }} </p>
+        {% endfor %}
     {% csrf_token %}
-    {% for field in form %}
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.username.name }}" id="id_{{ form.username.name }}" maxlength="254">
+      <label class="mdl-textfield__label" for="id_{{ form.username.name }}">Username</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="password" name="{{ form.password1.name }}" id="id_{{ form.password1.name }}" maxlength="254">
+      <label class="mdl-textfield__label" for="id_{{ form.password1.name }}">Password</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="password" name="{{ form.password2.name }}" id="id_{{ form.password2.name }}" maxlength="254">
+      <label class="mdl-textfield__label" for="id_{{ form.password2.name }}">Password Again</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.first_name.name }}" id="id_{{ form.first_name.name }}" maxlength="30">
+      <label class="mdl-textfield__label" for="id_{{ form.first_name.name }}">First Name</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.last_name.name }}" id="id_{{ form.last_name.name }}" maxlength="30">
+      <label class="mdl-textfield__label" for="id_{{ form.last_name.name }}">Last Name</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="email" name="{{ form.email.name }}" id="id_{{ form.email.name }}" maxlength="254">
+      <label class="mdl-textfield__label" for="id_{{ form.email.name }}">Email</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.company.name }}" id="id_{{ form.company.name }}" maxlength ="50">
+      <label class="mdl-textfield__label" for="id_{{ form.company.name }}">Company</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="nume" name="{{ form.mobile.name }}" id="id_{{ form.mobile.name }}" maxlength="10">
+      <label class="mdl-textfield__label" for="id_{{ form.mobile.name }}">Mobile</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.gstin.name }}" id="id_{{ form.gstin.name }}" maxlength="15">
+      <label class="mdl-textfield__label" for="id_{{ form.gstin.name }}">GSTIN</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <label for="id_{{ form.place_of_supply.name }}">Place Of Supply</label>
+      <select id="id_{{ form.place_of_supply.name }}" name="{{ form.place_of_supply.name }}">
+        
+        <option value="1">Jammu &amp; Kashmir</option>
+        <option value="2">Himachal Pradesh</option>
+        <option value="3">Punjab</option>
+        <option value="4">Chandigarh</option>
+        <option value="5">Uttarakhand</option>
+        <option value="6">Haryana</option>
+        <option value="7">Delhi</option>
+        <option value="8">Rajasthan</option>
+        <option value="9">Uttar Pradesh</option>
+        <option value="10">Bihar</option>
+        <option value="11">Sikkim</option>
+        <option value="12">Arunachal Pradesh</option>
+        <option value="13">Nagaland</option>
+        <option value="14">Manipur</option>
+        <option value="15">Mizoram</option>
+        <option value="16">Tripura</option>
+        <option value="17">Meghalaya</option>
+        <option value="18">Assam</option>
+        <option value="19">West Bengal</option>
+        <option value="20">Jharkhand</option>
+        <option value="21">Odisha</option>
+        <option value="22">Chhattisgarh</option>
+        <option value="23">Madhya Pradesh</option>
+        <option value="24">Gujarat</option>
+        <option value="25">Daman &amp; Diu</option>
+        <option value="26">Dadra &amp; Nagar Haveli</option>
+        <option value="27">Maharashtra</option>
+        <option value="29">Karnataka</option>
+        <option value="30">Goa</option>
+        <option value="31">Lakshdweep</option>
+        <option value="32">Kerala</option>
+        <option value="33">Tamil Nadu</option>
+        <option value="34">Pondicherry</option>
+        <option value="35">Andaman &amp; Nicobar Island</option>
+        <option value="36">Telangana</option>
+        <option value="37">Andhra Pradesh</option>
+        <option value="97">Other Territory</option>
+      </select>
+    </div>
+    
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+
+{% for field in form %}
       <p>
         {{ field.label_tag }}<br>
         {{ field }}
@@ -15,7 +113,4 @@
           <p style="color: red">{{ error }}</p>
         {% endfor %}
       </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-{% endblock %}
+{% endfor %}

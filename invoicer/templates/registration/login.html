@@ -1,30 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }} | Login{% endblock %}
+
+{% block content %}
+
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
 
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
+  <form class="mdl-grid" method="post" action="{% url 'accounts:login' %}">
+  {% csrf_token %}
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="{{ form.username.name }}" id="id_{{ form.username.name }}" max="254">
+      <label class="mdl-textfield__label" for="id_{{ form.username.name }}">Username</label>
+    </div>
 
-<div>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="password" name="{{ form.password.name }}" id="id_{{ form.password.name }}">
+      <label class="mdl-textfield__label" for="id_{{ form.password.name }}">Password</label>
+    </div>
+
+    <input class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" value="login" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+{% endblock %}
