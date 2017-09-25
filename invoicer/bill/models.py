@@ -48,6 +48,7 @@ PLACES = (
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE)
 	company = models.CharField(max_length = 50)
+	address = models.TextField()
 	mobile = models.CharField(max_length = 10)
 	gstin = models.CharField(max_length = 15)
 	place_of_supply = models.CharField(choices = PLACES, max_length = 30)
@@ -64,7 +65,7 @@ class Bill(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
 	invoice = models.CharField(max_length = 100)
 	buyer_name = models.CharField(max_length = 50)
-	buyer_address = models.CharField(max_length = 150)
+	buyer_address = models.TextField()
 	buyer_gstin = models.CharField(max_length = 15)
 	buyer_mobile = models.CharField(max_length = 10)
 	date_of_issue = models.DateField()

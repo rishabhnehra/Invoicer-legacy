@@ -2,12 +2,13 @@
 
 {% block content %}
   <div class="mdl-grid">
-    <h3 class="text-center">Register</h3>
+    <h3 class="mdl-cell mdl-cell--12-col text-center">Register</h3>
   </div>
   <form class="mdl-grid" method="post">
+
     {% for error in form.errors %}
-          <p style="color: red">{{ error }} </p>
-        {% endfor %}
+      <p style="color: red">{{ error }} </p>
+    {% endfor %}
     {% csrf_token %}
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <input class="mdl-textfield__input" type="text" name="{{ form.username.name }}" id="id_{{ form.username.name }}" maxlength="254">
@@ -42,6 +43,11 @@
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <input class="mdl-textfield__input" type="text" name="{{ form.company.name }}" id="id_{{ form.company.name }}" maxlength ="50">
       <label class="mdl-textfield__label" for="id_{{ form.company.name }}">Company</label>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" id="id_{{ form.address.name }}" name="{{ form.address.name }}" rows="3""></textarea>
+     <label class="mdl-textfield__label" for="id_{{ form.address.name }}">Address</label>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -98,19 +104,6 @@
       </select>
     </div>
     
-    <button type="submit">Sign up</button>
+    <button class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-offset-tablet mdl-cell--4-col-tablet mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Sign up</button>
   </form>
 {% endblock %}
-
-{% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-{% endfor %}

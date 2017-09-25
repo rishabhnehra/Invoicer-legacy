@@ -14,6 +14,7 @@ def signup(request):
 		user.profile.company = form.cleaned_data.get('company')
 		user.profile.mobile = form.cleaned_data.get('mobile')
 		user.profile.gstin = form.cleaned_data.get('gstin')
+		user.profile.address = form.cleaned_data.get('address')
 		user.profile.place_of_supply = form.cleaned_data.get('place_of_supply')
 		user.save()
 		raw_password = form.cleaned_data.get('password1')
