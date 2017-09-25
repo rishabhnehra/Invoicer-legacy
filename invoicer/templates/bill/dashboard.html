@@ -4,8 +4,8 @@
 
 {% block content %}
 	<div class="mdl-grid">
-		{% if bills %}
 			<h3 class="mdl-cell mdl-cell--12-col">Welcome, {{ user.first_name }} {{ user.last_name }}</h3>
+		{% if bills %}
 			<h4 class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--1-offset-desktop mdl-cell--10-col-desktop">Recent bills</h4>
 			<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--1-offset-desktop mdl-cell--10-col-desktop">
 				<thead>
@@ -28,7 +28,7 @@
 				</tbody>
 			</table>
 		{% else %}
-			<h3 class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">You haven't entered any bill</h3>
+			<h4 class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">You haven't entered any bill</h4>
 		{% endif %}
 	</div>
 	<a id="fab-add" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" href="{% url 'bill:new_bill' %}"><i class="material-icons">add</i></a>

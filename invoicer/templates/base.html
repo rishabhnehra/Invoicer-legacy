@@ -22,14 +22,14 @@
 			<div class="mdl-layout__drawer">
 				<nav class="mdl-navigation">
 					{% if request.user.is_authenticated %}
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'bill:dashboard' %}"><i class="material-icons" role="presentation">dashboard</i>Dashboard</a>
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'bill:new_bill' %}"><i class="material-icons">add</i>Create a bill</a>
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'bill:history' %}"><i class="material-icons">history</i>History</a>
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'accounts:logout' %}?next={% url 'home' %}"><i class="material-icons">exit_to_app</i>Logout</a>
+						<a class="mdl-navigation__link" href="{% url 'bill:dashboard' %}"><i class="material-icons" role="presentation">dashboard</i>Dashboard</a>
+						<a class="mdl-navigation__link" href="{% url 'bill:new_bill' %}"><i class="material-icons">add</i>Create a bill</a>
+						<a class="mdl-navigation__link" href="{% url 'bill:history' %}"><i class="material-icons">history</i>History</a>
+						<a class="mdl-navigation__link" href="{% url 'accounts:logout' %}?next={% url 'home' %}"><i class="material-icons">exit_to_app</i>Logout</a>
 					{% else %}
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'home' %}"><i class="material-icons" role="presentation">home</i>Home</a>
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'accounts:login' %}"><i class="material-icons" role="presentation">person</i>Login</a>
-						<a class="mdl-navigation__link mdl-js-ripple-effect" href="{% url 'bill:signup' %}"><i class="material-icons" role="presentation">add</i>Register</a>
+						<a class="mdl-navigation__link" href="{% url 'home' %}"><i class="material-icons" role="presentation">home</i>Home</a>
+						<a class="mdl-navigation__link" href="{% url 'accounts:login' %}"><i class="material-icons" role="presentation">person</i>Login</a>
+						<a class="mdl-navigation__link" href="{% url 'bill:signup' %}"><i class="material-icons" role="presentation">add</i>Register</a>
 					{% endif %}
 				</nav>
 			</div>

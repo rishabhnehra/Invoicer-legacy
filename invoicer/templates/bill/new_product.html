@@ -48,18 +48,18 @@
 			</div>
 
 			<div class="mdl-cell mdl-cell--2-col-phone mdl-cell--1-offset-tablet mdl-cell--2-col-tablet mdl-cell--2-offset-desktop mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="number" id="id_{{ add_product.cgst_rate.name }}" name="{{ add_product.cgst_rate.name }}" value="{% if add_product.cgst_rate.value != 0 %}{{ add_product.cgst_rate.value }}{% endif %}">
+				<input class="mdl-textfield__input" type="number" id="id_{{ add_product.cgst_rate.name }}" name="{{ add_product.cgst_rate.name }}" value="{% if add_product.cgst_rate.value != 0 %}{{ add_product.cgst_rate.value }}{% endif %}" step=".01">
 				<label class="mdl-textfield__label" >CGST (%)</label>
 			</div>
 
 			<div class="mdl-cell mdl-cell--2-col-phone mdl-cell--2-col-tablet mdl-cell--4-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="number" id="id_{{ add_product.sgst_rate.name }}" name="{{ add_product.sgst_rate.name }}" value="{% if add_product.sgst_rate.value != 0 %}{{ add_product.sgst_rate.value }}{% endif %}">
+				<input class="mdl-textfield__input" type="number" id="id_{{ add_product.sgst_rate.name }}" name="{{ add_product.sgst_rate.name }}" value="{% if add_product.sgst_rate.value != 0 %}{{ add_product.sgst_rate.value }}{% endif %}" step=".01">
 				<label class="mdl-textfield__label" >SGST (%)</label>
 			</div>
 
 			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--2-col-tablet mdl-cell--2-offset-desktop mdl-cell--8-col-desktop mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="number" id="id_{{ add_product.igst_rate.name }}" name="{{ add_product.igst_rate.name }}" value="{% if add_product.igst_rate.value != 0 %}{{ add_product.igst_rate.value }}{% endif %}">
-				<label class="mdl-textfield__label" >IGST (%)</label>
+				<label class="mdl-textfield__label" step=".01">IGST (%)</label>
 			</div>
 
 			<button class="mdl-cell mdl-cell--4-col-phone mdl-cell--1-offset-tablet mdl-cell--3-col-tablet mdl-cell--3-offset-desktop mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" id="show-snack-button">Add</button>
