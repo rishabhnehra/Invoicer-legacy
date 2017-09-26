@@ -49,3 +49,7 @@ html{
 .text-center{
 	text-align: center;
 }
+
+.verticalline{
+	border-left: thick solid #ff0000;
+}
