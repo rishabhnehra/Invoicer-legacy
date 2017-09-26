@@ -1,9 +1,11 @@
 # Invoicer
 A webapp that generates "Tax Invoice" within few steps. The aim of this webapp is to simplify the process of creating the tax invoice by just entering some info. The invoice's template is used to fill the details entered by the user. With its responive design, this webapp is easy to use in phones, tablets and desktops.
 
-# Frameworks and Libraries used
+# Technology Stack
 * Django 1.8.18
 * Material Design Lite 1.3.0
+* HTML5
+* CSS3
 
 # Getting Started
 Python 3.X and virtualenv must be installed on your OS.
