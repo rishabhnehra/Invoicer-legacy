@@ -1,5 +1,5 @@
 # Invoicer
-A webapp that generates "Tax Invoice" within few steps. The aim of this webapp is to simplify the process of creating the tax invoice by just entering some info. The invoice's template is used to fill the details entered by the user. With its responive design, this webapp is easy to use in phones, tablets and desktops.
+A webapp that generates "Tax Invoice" within few steps. The aim of this webapp is to simplify the process of creating the tax invoice by just entering some info. The invoice's template is used to fill the details entered by the user. With its responsive design, this webapp is easy to use on phones, tablets and desktops.
 
 # Technology Stack
 * Django 1.8.18
