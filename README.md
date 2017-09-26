@@ -2,8 +2,8 @@
 A webapp that generates "Tax Invoice" within few steps. The aim of this webapp is to simplify the process of creating the tax invoice by just entering some info. The invoice's template is used to fill the details entered by the user. With its responive design, this webapp is easy to use in phones, tablets and desktops.
 
 #Frameworks and Libraries used
-..* Django 1.8.18
-..* Material Design Lite 1.3.0
+⋅⋅* Django 1.8.18
+⋅⋅* Material Design Lite 1.3.0
 
 #Getting Started
 Python 3.X and virtualenv must be installed on your OS.
@@ -13,56 +13,56 @@ First, install virtualenv
 
 For Mac OS / Linux
 ```bash
-	pip3 install virtualenv
+pip3 install virtualenv
 ```
 For Windows
 ```bash
-	pip install virtualenv
+pip install virtualenv
 ```
 
 Clone this repo
 ```bash
-	git clone https://github.com/rishabhnehra/Invoicer.git
+git clone https://github.com/rishabhnehra/Invoicer.git
 ```
 
 Change the directory
 ```bash
-	cd Invoicer
+cd Invoicer
 ```
 
 Create a virtual environment of any name (say venv)
 ```bash
-	virtualenv venv
+virtualenv venv
 ```
 
 Activate that virtual environment
 ```bash
-	source venv/bin/activate
+source venv/bin/activate
 ```
 
 Install the required dependencies
 ```bash
-	pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Change the directory into invoicer
 ```bash
-	cd invoicer
+cd invoicer
 ```
 
 Run the migrate command
 ```bash
-	python manage.py migrate
+python manage.py migrate
 ```
 
 Create a super user to access the Django admin panel, and enter the required information
 ```bash
-	python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 Now run the development server by
 ```bash
-	python manage.py runserver
+python manage.py runserver
 ```
 
 # License
