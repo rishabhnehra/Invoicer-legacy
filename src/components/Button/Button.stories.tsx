@@ -1,25 +1,24 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Button, ButtonProps, Colors } from './Button';
+import { Button as ButtonComponent, ButtonProps, Colors } from './Button';
 
 export default {
-    title: 'Button',
-    component: Button
+    title: 'Components/Button',
+    component: ButtonComponent,
+    argTypes: {
+        customColor: { control: 'color' },
+        color: {
+            control: {
+                type: 'radio',
+                options: Colors
+            }
+        }
+    }
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args}>This is button</Button>;
+const Template: Story<ButtonProps> = (args) => <ButtonComponent {...args}>This is button</ButtonComponent>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    color: Colors.PRIMARY
-}
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-    color: Colors.SECONDARY
-}
-
-export const Accent = Template.bind({});
-Accent.args = {
-    color: Colors.ACCENT
+export const Button = Template.bind({});
+Button.args = {
+    color: Colors.Primary
 }
