@@ -1,0 +1,36 @@
+.button {
+    font-size: 15px;
+    color: #FFF;
+    width: 200px;
+    height: 42px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.primary {
+    background-color: #9E579D;
+}
+
+.secondary {
+    background-color: #574B90;
+}
+
+.accent {
+    background-color: #FC85AE;
+}
+
+.circular {
+    border-radius: 20px;
+}
+
+.large {
+    height: 49px;
+}
+
+.outline {
+    color: #000;
+    background-color: rgba(0,0,0,0);
+    border: 3px solid #9E579D;
+}
