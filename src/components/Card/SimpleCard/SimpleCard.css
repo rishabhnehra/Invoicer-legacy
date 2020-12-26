@@ -11,12 +11,11 @@
     margin: 0;
     font-size: 20px;
     font-weight: 600;
-    line-height: 24px;
 }
 
 .SimpleCard p {
     font-size: 11px;
-    font-weight: medium;
+    font-weight: 400;
 }
 
 .SimpleCard .actions {
@@ -27,5 +26,5 @@
 .SimpleCard a {
     color: #FFF;
     font-size: 11px;
-    font-weight: medium;
+    font-weight: 400;
 }
