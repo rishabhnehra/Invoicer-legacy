@@ -6,13 +6,13 @@ export enum Colors {
     Accent = "accent"
 }
 
-export interface ButtonProps {
-    circular?: boolean;
-    color?: Colors;
-    customColor?: string;
-    large?: boolean;
-    outline?: boolean;
-    onClick?: () => void;
+export type ButtonProps = {
+    circular?: boolean,
+    color?: Colors,
+    customColor?: string,
+    large?: boolean,
+    outline?: boolean,
+    onClick?: () => void
 }
 
 export const Button: React.FC<ButtonProps> = ({ 

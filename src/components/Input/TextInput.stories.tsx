@@ -11,5 +11,6 @@ const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 
 export const Text = Template.bind({});
 Text.args = {
-    placeholder: "Email"
+    placeholder: "Email",
+    type: "email"
 }

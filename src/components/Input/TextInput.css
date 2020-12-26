@@ -1,9 +1,7 @@
 .TextInput {
     color: #000;
-    height: 48px;
     width: 380px;
-    box-sizing: border-box;
-    padding-left: 18px;
+    padding: 16px;
     font-size: 18px;
     border-radius: 5px;
     border: none;
@@ -16,5 +14,4 @@
 
 .TextInput::placeholder {
     color: rgba(0,0,0,0.3);
-    
 }
