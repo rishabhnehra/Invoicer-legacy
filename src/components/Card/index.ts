@@ -1,4 +1,4 @@
-import { CardPrice } from './CardPrice/CardPrice';
+import { CardPrice } from './CardPrice/PriceCard';
 import { SimpleCard } from './SimpleCard/SimpleCard';
 
 export {

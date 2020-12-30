@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardPrice /> snapshot check 1`] = `
+exports[`<PriceCard /> snapshot check 1`] = `
 <div
-  className="CardPrice"
+  className="PriceCard"
 >
   <div
     className="headerSection"

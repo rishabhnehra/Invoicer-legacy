@@ -1,8 +1,8 @@
-import './CardPrice.css'
+import './PriceCard.css'
 import deleteSVG from '../../../assets/delete-black-18dp.svg';
 import createSVG from '../../../assets/create-black-18dp.svg';
 
-export type CardPriceProps = {
+export type PriceCardProps = {
     description: string,
     itemType: string,
     quantity: number,
@@ -11,7 +11,7 @@ export type CardPriceProps = {
     editAction: () => void
 }
 
-export const CardPrice: React.FC<CardPriceProps> = ({
+export const PriceCard: React.FC<PriceCardProps> = ({
     description,
     itemType,
     quantity,
@@ -19,7 +19,7 @@ export const CardPrice: React.FC<CardPriceProps> = ({
     removeAction,
     editAction
 }) => {
-    return <div className="CardPrice">
+    return <div className="PriceCard">
         <div className="headerSection">
             <div className="description">
                 <h1>{description}</h1>

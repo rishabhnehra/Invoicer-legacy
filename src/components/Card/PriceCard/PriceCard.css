@@ -1,4 +1,4 @@
-.CardPrice {
+.PriceCard {
     border-radius: 10px;
     padding: 16px;
     color: #FFF;
@@ -7,36 +7,36 @@
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.1);
 }
 
-.CardPrice .headerSection {
+.PriceCard .headerSection {
     display: flex;
     justify-content: space-between;
 }
 
-.CardPrice .priceSection {
+.PriceCard .priceSection {
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
 }
 
-.CardPrice .headerSection .description h1 {
+.PriceCard .headerSection .description h1 {
     margin: 0;
     font-size: 16px;
     font-weight: 600;
 }
 
-.CardPrice .headerSection .description p {
+.PriceCard .headerSection .description p {
     margin: 0;
     font-size: 11px;
     font-weight: 100;
 }
 
-.CardPrice .priceSection .quantity {
+.PriceCard .priceSection .quantity {
     font-size: 10px;
     margin: 4px 0 0 0;
     vertical-align: text-bottom;
 }
 
-.CardPrice .priceSection .price {
+.PriceCard .priceSection .price {
     font-size: 16px;
     margin: 0;
 }

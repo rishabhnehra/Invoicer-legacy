@@ -1,13 +1,13 @@
 import {Story, Meta} from '@storybook/react/types-6-0';
 
-import {CardPrice, CardPriceProps} from './CardPrice';
+import {PriceCard, PriceCardProps} from './PriceCard';
 
 export default {
     title: 'Components/Card',
-    component: CardPrice
+    component: PriceCard
 } as Meta;
 
-const Template: Story<CardPriceProps> = (args) => <CardPrice {...args} />
+const Template: Story<PriceCardProps> = (args) => <PriceCard {...args} />
 
 export const Price = Template.bind({});
 Price.args = {
