@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardPrice /> snapshot check 1`] = `
+<div
+  className="CardPrice"
+>
+  <div
+    className="headerSection"
+  >
+    <div
+      className="description"
+    >
+      <h1>
+        Description
+      </h1>
+      <p>
+        Item type
+      </p>
+    </div>
+    <div
+      className="actions"
+    >
+      <img
+        src="delete-black-18dp.svg"
+      />
+      <img
+        src="create-black-18dp.svg"
+      />
+    </div>
+  </div>
+  <div
+    className="priceSection"
+  >
+    <p
+      className="quantity"
+    >
+      Qty: 
+      2
+    </p>
+    <p
+      className="price"
+    >
+      ₹  
+      99900
+    </p>
+  </div>
+</div>
+`;

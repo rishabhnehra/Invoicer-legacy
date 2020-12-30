@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimpleCard /> snapshot check 1`] = `
+<div
+  className="SimpleCard"
+>
+  <h1>
+    Create Bill
+  </h1>
+  <p>
+    This will initiate the flow of bill creation where
+            you'll enter the required information and share
+            it with your clients either by mail, WhatsApp or
+            simple PDF
+  </p>
+  <div
+    className="actions"
+  >
+    <a
+      href="#"
+    >
+      Click to get started
+    </a>
+  </div>
+</div>
+`;
