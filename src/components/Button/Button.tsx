@@ -1,4 +1,4 @@
-import './Button.css';
+import './Button.scss';
 
 export enum Colors {
     Primary = "primary",

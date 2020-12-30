@@ -1,4 +1,4 @@
-import './SimpleCard.css'
+import './SimpleCard.scss'
 
 export type SimpleCardProps = {
     header: string,

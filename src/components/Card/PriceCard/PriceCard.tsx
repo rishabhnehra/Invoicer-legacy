@@ -1,4 +1,4 @@
-import './PriceCard.css'
+import './PriceCard.scss'
 import deleteSVG from '../../../assets/delete-black-18dp.svg';
 import createSVG from '../../../assets/create-black-18dp.svg';
 
