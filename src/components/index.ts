@@ -1,10 +1,10 @@
 import { Button } from './Button';
-import { CardPrice, SimpleCard } from './Card';
+import { PriceCard, SimpleCard } from './Card';
 import { TextInput } from './Input';
 
 export {
     Button,
-    CardPrice,
+    PriceCard,
     SimpleCard,
     TextInput
 };
