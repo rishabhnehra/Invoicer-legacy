@@ -5,26 +5,29 @@
     width: 320px;
     background-color: #9E579D;
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.1);
-}
 
-.SimpleCard h1 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-}
 
-.SimpleCard p {
-    font-size: 11px;
-    font-weight: 400;
-}
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
 
-.SimpleCard .actions {
-    display: flex;
-    justify-content: flex-end;
-}
+    p {
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
 
-.SimpleCard a {
-    color: #FFF;
-    font-size: 11px;
-    font-weight: 400;
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a {
+        color: #FFF;
+        font-size: 11px;
+        font-weight: 400;
+        text-decoration: none;
+    }
 }
