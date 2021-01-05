@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BusinessCard /> snapshot check 1`] = `
+<div
+  className="BusinessCard"
+>
+  <h5>
+    Sender
+  </h5>
+  <h1>
+    Rishabh Controls
+  </h1>
+  <h2>
+    24ABNPN1124A1ZA
+  </h2>
+  <p>
+    Address #1
+            Address #2
+  </p>
+  <p>
+    Phone: 
+    1234567890
+  </p>
+</div>
+`;

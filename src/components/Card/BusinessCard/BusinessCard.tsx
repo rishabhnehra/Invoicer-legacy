@@ -1,3 +1,5 @@
+import './BusinessCard.scss';
+
 export type BusinessCardProps = {
     isSender: boolean,
     name: string,
