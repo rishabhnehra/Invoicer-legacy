@@ -5,38 +5,42 @@
     width: 230px;
     background-color: #9E579D;
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.1);
-}
 
-.PriceCard .headerSection {
-    display: flex;
-    justify-content: space-between;
-}
+    .headerSection {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.PriceCard .priceSection {
-    margin-top: 24px;
-    display: flex;
-    justify-content: space-between;
-}
+    .priceSection {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
 
-.PriceCard .headerSection .description h1 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-}
+        .quantity {
+            font-size: 10px;
+            margin-top: 4px 0 0 0;
+            vertical-align: text-bottom;
+        }
 
-.PriceCard .headerSection .description p {
-    margin: 0;
-    font-size: 11px;
-    font-weight: 100;
-}
+        .price {
+            font-size: 16px;
+            margin: 0;
+        }
+    }
 
-.PriceCard .priceSection .quantity {
-    font-size: 10px;
-    margin: 4px 0 0 0;
-    vertical-align: text-bottom;
-}
+    .headerSection {
+        .description {
+            h1 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+            }
 
-.PriceCard .priceSection .price {
-    font-size: 16px;
-    margin: 0;
+            p {
+                margin: 0;
+                font-size: 11px;
+                font-weight: 100;
+            }
+        }
+    }
 }
