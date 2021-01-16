@@ -5,7 +5,7 @@ export type TextInputProps = {
     type: string,
     id?: string,
     labelText?: string,
-    onClick: () => void,
+    onClick?: () => void,
     onChange?: () => void
 }
 
