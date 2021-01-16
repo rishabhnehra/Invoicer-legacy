@@ -1,0 +1,65 @@
+.Login {
+    position: relative;
+
+    header {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: rgba(0,0,0,0.4);
+        margin: 8px 0 32px 0;
+    }
+
+    hr {
+        margin: 32px 0;
+    }
+
+    hr::after {
+        content: 'or';
+        font-size: 15px;
+        padding: 0 5px;
+        background-color: #E2F3F5;
+        position: absolute;
+        bottom: 25.5%;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .form-item {
+        padding: 8px 0;
+        
+        .TextInput {
+            box-shadow: none;
+        }
+
+        &__submit {
+            margin: 32px 0 20px 0;
+            height: 49px;
+
+            .button {
+                font-weight: bold;
+                font-size: 18px;
+                height: 100%;
+                width: 100%;
+                background-color: #fff;
+                color: #000;
+                box-shadow: none;
+            }
+        }
+
+        &__google-login {
+            margin: 20px 0 32px 0;
+            height: 49px;
+
+            .button {
+                font-weight: bold;
+                font-size: 18px;
+                height: 100%;
+                width: 100%;
+                background-color: #000;
+                color: #fff;
+                box-shadow: none;
+            }
+        }
+    }
+}
