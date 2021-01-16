@@ -4,7 +4,7 @@ import { NavBar } from './NavBar';
 
 describe('<NavBar />', () => {
     it('snapshot check', () => {
-        const tree = renderer.create(<NavBar title='My Dashboard' />).toJSON();
+        const tree = renderer.create(<NavBar title='My Dashboard' isLoggedIn />).toJSON();
         expect(tree).toMatchSnapshot();
     })
 })

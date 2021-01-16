@@ -9,7 +9,8 @@ export default {
 
 const Template: Story<NavBarProps> = (args) => <NavBarComponent {...args} />
 
-export const NavBar = Template.bind({});
-NavBar.args = {
+export const NavigationBar = Template.bind({});
+NavigationBar.args = {
     title: 'My Dashboard',
+    isLoggedIn: true
 }
