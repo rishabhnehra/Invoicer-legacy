@@ -66,9 +66,9 @@
 			<button class="mdl-cell mdl-cell--4-col-phone mdl-cell--1-offset-tablet mdl-cell--3-col-tablet mdl-cell--3-offset-desktop mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" id="show-snack-button">Add</button>
 
 			{% if products %}
-			<a class="mdl-cell mdl-cell--4-col-phone mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="{% url 'bill:summary' bill.id %}">Done</a>
+			<a class="mdl-cell mdl-cell--4-col-phone mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="{% url 'bill:summary_new' bill.id %}">Done</a>
 			{% else %}
-			<button class="mdl-cell mdl-cell--4-col-phone mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="{% url 'bill:summary' bill.id %}" disabled>Done</button>
+			<button class="mdl-cell mdl-cell--4-col-phone mdl-cell--3-col-tablet mdl-cell--3-col-desktop mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="{% url 'bill:summary_new' bill.id %}" disabled>Done</button>
 			{% endif %}
 
 		</form>

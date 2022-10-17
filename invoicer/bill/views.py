@@ -29,6 +29,19 @@ def dashboard(request):		#Shows the list of all the stored bills
 	return render(request, 'bill/dashboard.html', { 'bills': bills })
 
 @login_required
+def detail_new(request, id):	#A detail view of that Bill id
+	bill = get_object_or_404(Bill, id=id)
+	user = request.user
+	print(user)
+	products = bill.product_set.all()
+	context = {
+		'bill': bill,
+		'products': products,
+		'user': user
+	}
+	return render(request, 'bill/summary_new.html', context)
+
+@login_required
 def detail(request, id):	#A detail view of that Bill id
 	bill = get_object_or_404(Bill, id=id)
 	user = request.user
